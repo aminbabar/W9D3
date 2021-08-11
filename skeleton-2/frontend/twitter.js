@@ -1,17 +1,24 @@
 
 import FollowToggle from "./follow_toggle";
+import UsersSearch from "./users_search";
 
-$(document).ready( () => {
+$( () => {
     const $buttons = $(".follow-toggle");
-    const followToggleInstances = [];
-    // debugger
-    // $buttons.each ( (el) => {
-    //     debugger
-    //     followToggleInstances.push(new FollowToggle(el));
-    // })
-    // debugger
-    for (let i = 0; i < $buttons.length; i++) {
-        followToggleInstances.push(new FollowToggle($buttons[i]));
-    }
+    // const followToggleInstances = [];
+    $buttons.each ( (i, el) => {
+        new FollowToggle(el);
+    })
+
+
+    const $usersSearch = $(".users-search")
+    $usersSearch.each ((i, el) => {
+        new UsersSearch(el);
+    }); 
+    // for (let i = 0; i < $buttons.length; i++) {
+    //     // followToggleInstances.push(new FollowToggle($buttons[i]));
+    //     new FollowToggle($buttons[i]);
+    // }
+
+
     // debugger
 } )
